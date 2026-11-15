@@ -1,0 +1,26 @@
+=== 1. Simulación Individual (Escenario Base, Semilla 42) ===
+Estados ocultos (primeros 30): S S S S S S S S S S S D D D D D D D D D D D D D D D D D D D
+Observaciones   (primeras 30): B B A M B M M B B B B A B B M A M B M M A M A M B B M A M B
+Viterbi         (primeros 30): S S S S S S S S S S S S S S D D D D D D D D D D D D D D D D
+Log-verosimilitud de la secuencia: -191.50
+Precisión Viterbi: 0.810 | Precisión filtrado forward: 0.725 | Retardo medio detección: 0.62 pasos
+
+=== 2. Análisis Monte Carlo Escenario Base (500 corridas x 200 pasos) ===
+Precisión Viterbi : Media=0.8183 | DE=0.0522 | Mín=0.6500 | Máx=0.9500 | IC95%=[0.8137, 0.8229]
+Precisión Forward : Media=0.7652 | DE=0.0445 | Mín=0.6200 | Máx=0.8950 | IC95%=[0.7613, 0.7691]
+Frecuencia empírica de estados : {'Sano': 0.5956, 'Desgaste': 0.3274, 'Critico': 0.0771}
+Distribución estacionaria teórica: {'Sano': 0.5936, 'Desgaste': 0.3288, 'Critico': 0.0776}
+Frecuencia empírica de observ. : {'Baja': 0.5159, 'Media': 0.3189, 'Alta': 0.1651}
+Observaciones teóricas         : {'Baja': 0.5148, 'Media': 0.3189, 'Alta': 0.1662}
+Error máx. |A_hat - A| = 0.0051
+Error máx. |B_hat - B| = 0.0069
+
+=== 3. Comparación Estadística Multi-Escenario (Estándar Q1) ===
+E1: Base (Operación Nominal)               | Viterbi: 81.83% ± 5.22% (Mín  65.0%, Máx  95.0%, IC95% [81.37%, 82.29%]) | Forward: 76.52% | P_est(Crítico): 7.71%
+E2: Inicio Crítico (Variación de π)        | Viterbi: 81.62% ± 5.19% (Mín  65.5%, Máx  95.5%, IC95% [81.16%, 82.07%]) | Forward: 76.24% | P_est(Crítico): 8.42%
+E3: Sobrecarga Industrial (Variación de A) | Viterbi: 71.45% ± 5.27% (Mín  56.5%, Máx  84.5%, IC95% [70.99%, 71.91%]) | Forward: 67.41% | P_est(Crítico): 22.21%
+E4: Sensor Calibrado (Variación de B)      | Viterbi: 93.55% ± 2.38% (Mín  83.0%, Máx  99.0%, IC95% [93.34%, 93.76%]) | Forward: 88.09% | P_est(Crítico): 7.70%
+
+=== 4. Aprendizaje No Supervisado Baum-Welch (40 secuencias x 200 pasos) ===
+Iteraciones ejecutadas: 35 | Log-verosimilitud inicial: -194.50 -> final: -186.94
+Error máx. post-entrenamiento |A_bw - A| = 0.1112 | Error máx. |B_bw - B| = 0.0580
